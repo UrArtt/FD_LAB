@@ -33,21 +33,13 @@
 .page1-product-image {
   flex: 0 0 auto; /* Zapewnia, że obraz nie będzie się rozszerzać */
   width: 50%; /* Możesz zmienić szerokość w zależności od preferencji */
-  height: 692px;
-  background-color: #dddddd;
-  border-radius: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
 }
 
-.page1-product-placeholder {
-  width: 540px;
-  height: 68px;
-  background-color: #999999;
-  border-radius: 4px;
-}
+
 
 /* Szczegóły produktu */
 .page1-product-details {

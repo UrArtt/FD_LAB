@@ -5,7 +5,7 @@
       "name": "Smartphone X",
       "price": 1999.99,
       "description": "Flagowy smartfon z 6.7-calowym ekranem",
-      "image": "",
+      "image": "https://i.imgur.com/eQprcuS.png",
       "specifications": [
         "Ekran AMOLED 120Hz",
         "Procesor Snapdragon 8 Gen 2",
@@ -24,26 +24,36 @@
       "name": "Laptop Pro",
       "price": 5499.99,
       "description": "Profesjonalny laptop do zadań kreatywnych",
-      "image": "",
+      "image": "https://i.imgur.com/sWGaFd7.jpeg",
       "specifications": [
         "Intel i7 13th Gen",
         "32 GB RAM",
         "1 TB SSD"
       ],
-      "reviews": []
+      "reviews": [
+      {
+          "author": "Adam Nowak",
+          "rating": 3,
+          "text": "Bateria nie trzyma długo."
+        }]
     },
     {
     "id": "3",
-      "name": "Laptop Pro",
-      "price": 5499.99,
-      "description": "Profesjonalny laptop do zadań kreatywnych",
-      "image": "",
+      "name": "Smartwatch S",
+      "price": 499.99,
+      "description": "Wysokiej klasy smartzegarek z GPS",
+      "image": "https://i.imgur.com/ovKBUpt.jpeg",
       "specifications": [
-        "Intel i7 13th Gen",
-        "32 GB RAM",
-        "1 TB SSD"
+        "Ekran MiP 1,5 cala",
+        "Nadajnik GPS ",
+        "Moduł eSIM"
       ],
-      "reviews": []
+      "reviews": [
+      {
+          "author": "Marek",
+          "rating": 4,
+          "text": "Za wysoka cena."
+        }]
     }
   ]
 }

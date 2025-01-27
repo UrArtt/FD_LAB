@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import "./Page2.css";
+import React, { useState, useEffect } from "react";
+import "./Page1.css";
 
 const Page2 = ({ addToCart, cartItems }) => {
   const [product, setProduct] = useState(null); // Stan dla jednego produktu
@@ -96,21 +96,6 @@ const Page2 = ({ addToCart, cartItems }) => {
             ))
           ) : (
             <p className="page1-no-reviews">Brak opinii</p>
-          )}
-        </div>
-        {/* Wyświetlanie koszyka */}
-        <div className="page1-cart-section">
-          <h2 className="page1-cart-title">Koszyk</h2>
-          {cartItems.length > 0 ? (
-            <ul className="page1-cart-list">
-              {cartItems.map((item) => (
-                <li key={item.id} className="page1-cart-item">
-                  {item.name} - ${item.price} x {item.quantity}
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p className="page1-cart-empty">Koszyk jest pusty.</p>
           )}
         </div>
       </div>

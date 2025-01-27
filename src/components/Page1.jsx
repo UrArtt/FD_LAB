@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Page1.css";
 
-const Page1 = () => {
+const Page1 = ({ addToCart, cartItems }) => {
   const [product, setProduct] = useState(null); // Stan dla jednego produktu
   const [loading, setLoading] = useState(true); // Stan ładowania
   const [error, setError] = useState(null); // Stan błędu
@@ -16,7 +16,7 @@ const Page1 = () => {
         }
         const data = await response.json();
 
-        // Znajdź produkt o konkretnym ID (np. "1")
+        // Znajdź produkt o konkretnym ID (np. "2")
         const selectedProduct = data.find((item) => item.id === "1");
         setProduct(selectedProduct);
         setLoading(false);
@@ -28,6 +28,12 @@ const Page1 = () => {
 
     fetchProduct();
   }, []);
+
+  // Funkcja dodawania produktu do koszyka
+  const addToCartHandler = () => {
+    addToCart(product);
+    alert(`Dodano produkt "${product.name}" do koszyka.`);
+  };
 
   if (loading) {
     return <div>Ładowanie...</div>;
@@ -65,10 +71,14 @@ const Page1 = () => {
               </ul>
               <div className="page1-product-price">${product.price}</div>
             </div>
-            <button className="page1-add-to-cart">Dodaj do koszyka</button>
+            <button
+              className="page1-add-to-cart"
+              onClick={addToCartHandler} // Dodanie produktu do koszyka
+            >
+              Dodaj do koszyka
+            </button>
           </div>
         </div>
-
         {/* Sekcja opinii */}
         <div className="page1-reviews-section">
           <h2 className="page1-reviews-title">Opinie</h2>

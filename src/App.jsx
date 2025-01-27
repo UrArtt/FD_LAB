@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Home from "./components/Home";
 import Shop from "./components/Shop";
@@ -8,22 +8,40 @@ import Page1 from "./components/Page1";
 import Page2 from "./components/Page2";
 import Page3 from "./components/Page3";
 import NotFound from "./components/NotFound";
+import Order from "./components/Order"
 import "./App.css";
 
 const App = () => {
-  const [cartItems, setCartItems] = useState([]); // Stan koszyka
+  // Inicjalizacja koszyka z localStorage
+  const [cartItems, setCartItems] = useState(() => {
+    const savedCart = localStorage.getItem("cart");
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
 
-  // Funkcja dodająca produkt do koszyka
+  // Funkcja do dodawania produktu do koszyka
   const addToCart = (product) => {
-    setCartItems((prevItems) => {
-      const itemIndex = prevItems.findIndex((item) => item.id === product.id);
-      if (itemIndex > -1) {
-        const updatedItems = [...prevItems];
-        updatedItems[itemIndex].quantity += 1; // Zwiększa ilość produktu
-        return updatedItems;
-      }
-      return [...prevItems, { ...product, quantity: 1 }]; // Dodaje nowy produkt
-    });
+    // Sprawdzamy, czy produkt jest już w koszyku
+    const existingItem = cartItems.find((item) => item.id === product.id);
+
+    let updatedCart;
+    if (existingItem) {
+      // Jeśli produkt już jest, zwiększamy ilość
+      updatedCart = cartItems.map((item) =>
+        item.id === product.id
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      );
+    } else {
+      // Jeśli produktu nie ma, dodajemy go do koszyka
+      updatedCart = [
+        ...cartItems,
+        { ...product, quantity: 1 }, // Dodajemy produkt z ilością 1
+      ];
+    }
+
+    // Ustawiamy nowy stan koszyka i zapisujemy do localStorage
+    setCartItems(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
   return (
@@ -33,7 +51,7 @@ const App = () => {
           <nav className="nav">
             <Link to="/" className="nav-item">Home</Link>
             <Link to="/Shop" className="nav-item">Shop</Link>
-            <Link to="/Cart" className="nav-item">Cart</Link>
+            <Link to="/Cart" className="nav-item">Cart ({cartItems.length})</Link>
             <Link to="/Contact" className="nav-item">Contact</Link>
           </nav>
         </header>
@@ -42,9 +60,10 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/Shop" element={<Shop />} />
           <Route path="/Contact" element={<Contact />} />
+          <Route path="/Order" element={<Order cartItems={cartItems} />} />
           <Route
             path="/Cart"
-            element={<Cart cartItems={cartItems} />}
+            element={<Cart cartItems={cartItems} setCartItems={setCartItems} />}
           />
           <Route
             path="/Page1"
@@ -53,6 +72,10 @@ const App = () => {
           <Route
             path="/Page2"
             element={<Page2 addToCart={addToCart} cartItems={cartItems} />}
+          />
+          <Route
+            path="/Page3"
+            element={<Page3 addToCart={addToCart} cartItems={cartItems} />}
           />
           <Route path="*" element={<NotFound />} />
         </Routes>
