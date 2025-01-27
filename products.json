@@ -1,0 +1,49 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Smartphone X",
+      "price": 1999.99,
+      "description": "Flagowy smartfon z 6.7-calowym ekranem",
+      "image": "",
+      "specifications": [
+        "Ekran AMOLED 120Hz",
+        "Procesor Snapdragon 8 Gen 2",
+        "Bateria 5000 mAh"
+      ],
+      "reviews": [
+        {
+          "author": "Jan Kowalski",
+          "rating": 5,
+          "text": "Rewelacyjna wydajność!"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Laptop Pro",
+      "price": 5499.99,
+      "description": "Profesjonalny laptop do zadań kreatywnych",
+      "image": "",
+      "specifications": [
+        "Intel i7 13th Gen",
+        "32 GB RAM",
+        "1 TB SSD"
+      ],
+      "reviews": []
+    },
+    {
+    "id": "3",
+      "name": "Laptop Pro",
+      "price": 5499.99,
+      "description": "Profesjonalny laptop do zadań kreatywnych",
+      "image": "",
+      "specifications": [
+        "Intel i7 13th Gen",
+        "32 GB RAM",
+        "1 TB SSD"
+      ],
+      "reviews": []
+    }
+  ]
+}

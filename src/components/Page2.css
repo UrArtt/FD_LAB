@@ -1,0 +1,169 @@
+/* Kontener główny */
+.page2-container {
+  width: 100%;
+  height: 100%;
+  background-color: #f9fafb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Sekcja główna */
+.page2-main {
+  width: 100%;
+  max-width: 1920px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Sekcja produktu */
+.page2-product-section {
+  display: flex;
+  flex-direction: row; /* Zmieniamy na układ poziomy (row) */
+  align-items: flex-start;
+  gap: 40px;
+  width: 100%;
+}
+
+/* Obraz produktu */
+.page2-product-image {
+  flex: 0 0 auto; /* Zapewnia, że obraz nie będzie się rozszerzać */
+  width: 50%; /* Możesz zmienić szerokość w zależności od preferencji */
+  height: 692px;
+  background-color: #dddddd;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.page2-product-placeholder {
+  width: 540px;
+  height: 68px;
+  background-color: #999999;
+  border-radius: 4px;
+}
+
+/* Szczegóły produktu */
+.page2-product-details {
+  flex: 1;
+  width: 50%; /* Zajmuje resztę dostępnej przestrzeni */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.page2-product-title {
+  font-size: 36px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.page2-product-specifications {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.page2-specifications-title {
+  font-size: 24px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.page2-product-specifications ul {
+  list-style: none;
+  padding: 0;
+}
+
+.page2-product-specifications li {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: #4b5563;
+  line-height: 24px;
+}
+
+.page2-product-description {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: #4b5563;
+  line-height: 24px;
+}
+
+.page2-product-price {
+  font-size: 24px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: #374151;
+  margin-top: 10px;
+}
+
+.page2-add-to-cart {
+  padding: 15px 40px;
+  background-color: #3b82f6;
+  color: white;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  text-align: center;
+  align-self: flex-start;
+  margin-top: 20px;
+}
+
+.page2-add-to-cart:hover {
+  background-color: #2563eb;
+}
+
+/* Sekcja recenzji */
+.page2-reviews-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 40px; /* Zwiększamy odstęp od opisu */
+}
+
+.page2-reviews-title {
+  font-size: 24px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+/* Recenzja */
+.page2-review {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.page2-review-author {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  color: black;
+}
+
+.page2-review-text {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: #4b5563;
+  line-height: 24px;
+}

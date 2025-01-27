@@ -1,0 +1,159 @@
+/* Stylizacja kontenera */
+.contact-container {
+  background-color: #f9fafb;
+  padding: 32px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Sekcja tytułowa */
+.contact-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact-header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1f2937;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Sekcja kontaktowa */
+.contact-content {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* Informacje kontaktowe */
+.contact-info {
+  background-color: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 1 1 300px; /* Elastyczna szerokość z minimalną szerokością */
+  min-width: 280px;
+}
+
+.contact-info h2 {
+  font-size: 24px;
+  color: black;
+  font-weight: 700;
+  margin-bottom: 16px;
+  font-family: "Roboto", sans-serif;
+}
+
+.contact-info p {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #374151;
+  margin-bottom: 12px;
+}
+
+.contact-info .icon {
+  font-size: 18px;
+}
+
+/* Formularz kontaktowy */
+.contact-form {
+  background-color: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 1 1 300px; /* Elastyczna szerokość z minimalną szerokością */
+  min-width: 280px;
+}
+
+.contact-form-group {
+  margin-bottom: 16px;
+}
+
+.contact-form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-family: "Roboto", sans-serif;
+  color: #374151;
+}
+
+.contact-form-group input,
+.contact-form-group textarea {
+  width: 100%;
+  background: white;
+  color: black;
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form-group input:focus,
+.contact-form-group textarea:focus {
+  border-color: #3b82f6;
+  outline: none;
+}
+
+.contact-form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Przyciski */
+.contact-submit-button {
+  background-color: #3b82f6;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contact-submit-button:hover {
+  background-color: #2563eb;
+}
+
+/* Walidacja błędów */
+.contact-form-group input:invalid,
+.contact-form-group textarea:invalid {
+  border-color: #f87171;
+}
+
+.contact-form-group .error-message {
+  color: #f87171;
+  font-size: 14px;
+  margin-top: 4px;
+  display: none; /* Domyślnie ukryte */
+}
+
+/* Responsywność dla mniejszych ekranów */
+@media (max-width: 768px) {
+  .contact-content {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .contact-info,
+  .contact-form {
+    width: 80%;
+    padding: 16px;
+  }
+
+  .contact-header h1 {
+    font-size: 28px;
+  }
+
+  .contact-submit-button {
+    padding: 10px 20px;
+  }
+}
